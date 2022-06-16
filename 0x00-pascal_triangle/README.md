@@ -1,6 +1,6 @@
-)# Pascal's Triangle
+# Pascal's Triangle
 
-![pascal_triangle](https://upload.wikimedia.org/wikipedia/commons/4/4b/Pascal_triangle.svg)
+![pascal_triangle](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH5Nw-PRRZqoUaSu-dPLJ-mAQnG8jSfwHZMA&usqp=CAU)
 ## From Mathematical point of view
 
 Pascal’s triangle, in algebra, a triangular arrangement of numbers that gives the coefficients in the expansion of any binomial expression, such as (x + y)n. It is named for the 17th-century French mathematician Blaise Pascal, but it is far older. Chinese mathematician Jia Xian devised a triangular representation for the coefficients in the 11th century. His triangle was further studied and popularized by Chinese mathematician Yang Hui in the 13th century, for which reason in China it is often called the Yang Hui triangle. It was included as an illustration in Chinese mathematician Zhu Shijie’s Siyuan yujian (1303; “Precious Mirror of Four Elements”), where it was already called the “Old Method.” The remarkable pattern of coefficients was also studied in the 11th century by the Persian mathematician, astronomer, and poet Omar Khayyam.
