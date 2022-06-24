@@ -8,8 +8,8 @@ def canUnlockAll(boxes):
     return: Bool -  True or False
     """
     n = len(boxes)
-    for i in boxes:
-        if len(i) == 0 and i is not boxes[n-1]:
+    for box in boxes:
+        if len(box) == 0 and box is not boxes[n-1]:
             return False
     for index, keys in enumerate(boxes):
         return True
