@@ -7,9 +7,11 @@ def canUnlockAll(boxes):
     method that determines if all the boxes can be unlocked
     return: Bool -  True or False
     """
-    n = len(boxes)
-    for box in boxes:
-        if len(box) == 0 and box is not boxes[n-1]:
-            return False
-    for index, keys in enumerate(boxes):
+    keys = [0]
+    for i in keys:
+        for index in boxes[i]:
+            if index not in keys and index < len(boxes):
+                keys.append(index)
+    if len(keys) == len(boxes):
         return True
+    return False
