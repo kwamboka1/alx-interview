@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 
 """
     A method that determines the number of minmum operations given n characters
@@ -18,10 +18,10 @@ def minOperations(n):
     start = 0
     count = 0
 
-    while (now < n):
-        pos = n - now
+    while now < n:
+        rem = n - now
 
-        if ( pos % now == 0):
+        if ( rem % now == 0):
             start = now
             now += start
             
