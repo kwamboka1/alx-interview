@@ -16,7 +16,7 @@ def minOperations(n):
 
     now = 1
     start = 0
-    i = 0
+    count = 0
 
     while (now < n):
         pos = n - now
@@ -25,9 +25,9 @@ def minOperations(n):
             start = now
             now += start
             
-            i += 2
+            count += 2
         else:
             now += start
-            i += 1
+            count += 1
 
-    return i
+    return count
