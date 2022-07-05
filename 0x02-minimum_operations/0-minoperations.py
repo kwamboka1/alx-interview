@@ -17,17 +17,15 @@ def minOperations(n):
     now = 1
     start = 0
     count = 0
-
     while now < n:
         rem = n - now
-
         if ( rem % now == 0):
             start = now
             now += start
-            
             count += 2
         else:
             now += start
             count += 1
-
     return count
+
+
