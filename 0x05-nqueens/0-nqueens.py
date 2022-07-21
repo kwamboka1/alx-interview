@@ -52,6 +52,6 @@ if __name__ == "__main__":
             print("N must be at least 4")
             exit(1)
         else:
-            res = solveNQueens(n)
-            for position in res:
-                print(position)
+            sol = solveNQueens(n)
+            for r in sol:
+                print(sol)
