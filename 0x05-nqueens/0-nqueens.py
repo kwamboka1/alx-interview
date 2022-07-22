@@ -1,57 +1,64 @@
 #!/usr/bin/python3
-
 """
-The N queens puzzle is the challenge of placing N non-attacking queens on an N×N chessboard. Write a program that solves the N queens problem.
+Module for N Queens.
 """
 from sys import argv, exit
 
+
 def solveNQueens(n):
-    """
-    A function that places N non-attacking queens on an Nxn chessboard
-    """
-    posDiag = set() # (r+c)
-    negDiag = set() # (r-c)
-    col = set()
+    """Program that places N non-attacking queens on an NxN chessboard"""
+    res = []
+    queens = [-1] * n
+    # index represents row no and value represents col no
 
-    result = []
-    board = [["."] * n for i in range(n)]
+    def fs(index):
+        """Recursively resolves the N queens problem"""
+        if index == len(queens):  # n queens have been placed correctly
+            res.append(queens[:])
+            return  # backtracking
+        for i in range(len(queens)):
+            queens[index] = i
+            if valid(index):  # pruning
+                fs(index + 1)
 
-    def backtrack(r):
-        if r == n:
-            copy = ["".join(row) for row in board]
-            result.append(copy)
-            return
+    # check whether nth queens can be placed
+    def valid(n):
+        """Method that checks if a position in the board is valid"""
+        for i in range(n):
+            if abs(queens[i] - queens[n]) == n - i:  # same diagonal
+                return False
+            if queens[i] == queens[n]:  # same column
+                return False
+        return True
 
-        for c in range(n):
-            if c in col | (r+c) in posDiag | (r-c) in negDiag:
-                continue
+    def make_all_boards(res):
+        """Method that builts the List that be returned"""
+        actual_boards = []
+        for queens in res:
+            board = []
+            for row, col in enumerate(queens):
+                board.append([row, col])
+            actual_boards.append(board)
+        return actual_boards
 
-            col.add(c)
-            posDiag.add(r+c)
-            negDiag.add(r-c)
-            board[r][c] = "Q"
+    fs(0)
+    return make_all_boards(res)
 
-            backtrack(r+1)
 
-            col.remove(c)
-            posDiag.remove(r+c)
-            negDiag.remove(r-c)
-            board[r][c] = "."
-
-    backtrack(0)
-    return result
 if __name__ == "__main__":
-
     if len(argv) < 2:
-        print("Usage: nqueens N")
+        print('Usage: nqueens N')
         exit(1)
-    
-        try:
-            n = int(argv[1])
-        except ValueError:
-            print("N must be at least 4")
-            exit(1)
-        else:
-            sol = solveNQueens(n)
-            for r in sol:
-                print(sol)
+    try:
+        n = int(argv[1])
+    except ValueError:
+        print('N must be a number')
+        exit(1)
+
+    if n < 4:
+        print('N must be at least 4')
+        exit(1)
+    else:
+        result = solveNQueens(n)
+        for row in result:
+            print(row)
