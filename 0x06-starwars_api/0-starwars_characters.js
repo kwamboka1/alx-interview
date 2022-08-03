@@ -13,7 +13,7 @@ request.get(`${baseUrl}films/${movieId}`, { json: true }, (err, res, body) => {
   actorsList(result);
 });
 
-function actorsList(result, i = 0) {
+function actorsList (result, i = 0) {
   if (i === result.length) return;
 
   request(result[i], { json: true }, (err, res, body) => {
