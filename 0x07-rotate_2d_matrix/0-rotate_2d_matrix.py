@@ -14,20 +14,20 @@ def rotate_2d_matrix(matrix):
                            [9, 6, 3]]
     """
     n = len(matrix)
-    for x in range(0, int(n / 2)):
+    for row in range(0, int(n / 2)):
 
-        for y in range(x, n - x - 1):
-            # print((x,y))
-            temp = matrix[x][y]
+        for col in range(row, n - row - 1):
+            # print((row,col))
+            temp = matrix[row][col]
 
-            # print((x,y), (n - 1 - y,x))
-            matrix[x][y] = matrix[n - 1 - y][x]
+            # print((row,col), (n - 1 - col,row))
+            matrix[row][col] = matrix[n - 1 - col][row]
 
-            # print((n - 1 - y,x), (n - 1 - x,n - 1 - y))
-            matrix[n - 1 - y][x] = matrix[n - 1 - x][n - 1 - y]
+            # print((n - 1 - col,row), (n - 1 - row,n - 1 - col))
+            matrix[n - 1 - col][row] = matrix[n - 1 - row][n - 1 - col]
 
-            # print((n - 1 - x,n - 1 - y), (y,n - 1 - x))
-            matrix[n - 1 - x][n - 1 - y] = matrix[y][n - 1 - x]
+            # print((n - 1 - row,n - 1 - col), (col,n - 1 - row))
+            matrix[n - 1 - row][n - 1 - col] = matrix[col][n - 1 - row]
 
-            # print((y,n - 1 - x))
-            matrix[y][n - 1 - x] = temp
+            # print((col,n - 1 - row))
+            matrix[col][n - 1 - row] = temp
