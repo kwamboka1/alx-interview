@@ -1,7 +1,9 @@
 # 0x07. Rotate 2D Matrix
 
 `Algorithm` `Python`
+
 ![Matrix](https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiA7cYgBc9jvLkjUQLSHCRSCZNMefw5yvkxA&usqp=CAU)
+
 ## Tasks
 `0. Rotate 2D Matrix`
 
