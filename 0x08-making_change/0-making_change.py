@@ -11,7 +11,6 @@ def makeChange(coins, total):
 
     if total < 0:
         return 0
-
     for coin in coins:
         if total % coin <= total:
             temp += total // coin
